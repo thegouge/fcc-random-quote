@@ -1,25 +1,53 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import QuoteBox from "./components/QuoteBox";
+import "./css/App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      quoteText: "",
+      quoteAuthor: "",
+      quoteCat: "none"
+    };
+
+    this.getRandomQuote = this.getRandomQuote.bind(this);
+  }
+  getRandomQuote() {
+    fetch("https://talaikis.com/api/quotes/random/")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            quoteText: result.quote,
+            quoteAuthor: result.author,
+            quoteCat: result.cat
+          });
+        },
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      );
+  }
+  componentDidMount() {
+    this.getRandomQuote();
+  }
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <h1>Random Quotes!</h1>
         </header>
+
+        <QuoteBox
+          quoteText={this.state.quoteText}
+          quoteAuthor={this.state.quoteAuthor}
+          getQuote={this.getRandomQuote}
+        />
       </div>
     );
   }
