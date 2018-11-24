@@ -2,7 +2,7 @@
   "name": "random-quote-machine",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://thegouge.github.io/random-quote-machine",
+  "homepage": "http://thegouge.github.io/fcc-random-quote",
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
