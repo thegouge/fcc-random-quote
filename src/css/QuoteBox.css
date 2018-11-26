@@ -1,3 +1,8 @@
 #quote-box {
-  color: white;
+  background: white;
+  color: black;
+  width: 50%;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
