@@ -1,18 +1,21 @@
 import React from "react";
+import "../css/footer.css";
 
-function Footer() {
+const Footer = (props) => {
   return (
-    <footer>
+    <footer style={{backgroundColor: props.background}}>
       Icons and favicon made by
-      <a href="https://www.freepik.com/" title="Freepik">
+      <a className="footerA" href="https://www.freepik.com/" title="Freepik">
         Freepik
       </a>
       from
-      <a href="https://www.flaticon.com/" title="Flaticon">
+      <a className="footerA" href="https://www.flaticon.com/" title="Flaticon">
         www.flaticon.com
       </a>
-      is licensed by
+      <br />
+      and is licensed by
       <a
+        className="footerA"
         href="http://creativecommons.org/licenses/by/3.0/"
         title="Creative Commons BY 3.0"
       >
@@ -20,6 +23,6 @@ function Footer() {
       </a>
     </footer>
   );
-}
+};
 
 export default Footer;

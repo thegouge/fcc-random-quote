@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import QuoteBox from "./components/QuoteBox";
 import Footer from "./components/Footer";
+import quotes from "./assets/quote.png";
 import "./css/App.css";
 
 let background = "rgb(38, 42, 49)";
@@ -40,9 +41,7 @@ class App extends Component {
   }
   backgroundChanger(category) {
     if (this.state.quoteCat !== category) {
-      background = `rgb(${this.getRandomColor}, ${this.getRandomColor}, ${
-        this.getRandomColor
-      })`;
+      background = `rgb(${this.getRandomColor()}, ${this.getRandomColor()}, ${this.getRandomColor()})`;
     }
   }
   getRandomColor() {
@@ -50,6 +49,9 @@ class App extends Component {
   }
   componentDidMount() {
     this.getRandomQuote();
+  }
+  urlText(text) {
+    return text.replace(/\s/, "%20");
   }
   render() {
     return (
@@ -62,9 +64,12 @@ class App extends Component {
           quoteText={this.state.quoteText}
           quoteAuthor={this.state.quoteAuthor}
           getQuote={this.getRandomQuote}
+          quoteIcon={quotes}
+          background={background}
+          urlText={this.urlText}
         />
 
-        <Footer />
+        <Footer background={background} />
       </div>
     );
   }

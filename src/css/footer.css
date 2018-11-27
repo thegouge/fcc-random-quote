@@ -1,0 +1,13 @@
+footer {
+  position: -ms-page;
+  transition: 0.5s;
+  bottom: 0;
+  color: white;
+}
+
+.footerA {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  font-weight: bold;
+}
