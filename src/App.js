@@ -25,7 +25,6 @@ class App extends Component {
         (result) => {
           this.backgroundChanger(result.cat);
           this.setState({
-            isLoaded: true,
             quoteText: result.quote,
             quoteAuthor: result.author,
             quoteCat: result.cat
@@ -33,7 +32,6 @@ class App extends Component {
         },
         (error) => {
           this.setState({
-            isLoaded: true,
             error
           });
         }
@@ -59,6 +57,8 @@ class App extends Component {
         <header className="App-header">
           <h1>Random Quotes!</h1>
         </header>
+
+        {this.state.error && <div>{this.state.error}</div>}
 
         <QuoteBox
           quoteText={this.state.quoteText}
