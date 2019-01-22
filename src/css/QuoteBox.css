@@ -3,8 +3,7 @@
   background: rgb(221, 203, 203);
   color: black;
   width: 40%;
-  padding: 30px;
-  padding-top: 40px;
+  padding: 40px 0;
   margin: auto;
   margin-top: 100px;
   margin-bottom: 100px;
@@ -68,4 +67,11 @@
   transform: rotate(180deg);
   bottom: -23px;
   right: -23px;
+}
+
+@media only screen and (max-width: 800px) {
+  #quote-box {
+    width: 100%;
+    border-radius: 0;
+  }
 }
