@@ -6,8 +6,11 @@ footer {
 }
 
 footer a {
-  color: white;
   text-decoration: none;
-  padding: 5px;
+  color: rgb(230, 55, 55);
   font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
